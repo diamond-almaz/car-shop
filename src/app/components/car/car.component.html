@@ -1,10 +1,10 @@
-<div class="bg-red-200 rounded-xl p-3 mb-5 font-medium">
-  <div class="mb-3 text-2xl">
+<div [ngClass]="getClass()" class="rounded-xl p-3 mb-5 font-medium">
+  <div [style]="{ color: car.isSold ? '#038e03' : '#b90909'}" class="mb-3 text-2xl">
     {{ car.name }}
   </div>
   <div>
-    <button style="margin-right: 12px;" mat-raised-button color="primary">Купить</button>
-    <button mat-raised-button>Вернуть</button>
+    <button style="margin-right: 12px;" mat-raised-button color="primary" [disabled]="car.isSold">Купить</button>
+    <button mat-raised-button >Вернуть</button>
 
   </div>
 </div>
