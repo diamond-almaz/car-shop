@@ -7,9 +7,6 @@ import { ICar } from 'src/types';
   selector: 'app-car',
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.scss'],
-  providers: [
-    ConsoleService,
-  ]
 })
 export class CarComponent implements OnInit {
   @Input() car: ICar = { name: '', isSold: false};

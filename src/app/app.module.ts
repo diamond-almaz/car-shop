@@ -8,6 +8,8 @@ import { CarAddComponent } from './components/car-add/car-add.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { CarService } from './cars.service';
+import { ConsoleService } from './console.service';
 
 
 
@@ -24,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    ConsoleService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
