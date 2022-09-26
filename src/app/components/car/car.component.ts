@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { ICar } from 'src/types';
 
 @Component({
   selector: 'app-car',
@@ -7,10 +8,17 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./car.component.scss']
 })
 export class CarComponent implements OnInit {
-  @Input() car: any;
+  @Input() car: ICar = { name: '', isSold: false};
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getClass() {
+    return {
+      'bg-red-200': this.car.isSold === false,
+      'bg-green-100': this.car.isSold,
+    }
   }
 
 }
