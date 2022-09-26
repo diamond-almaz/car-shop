@@ -1,15 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { ConsoleService } from 'src/app/console.service';
 import { ICar } from 'src/types';
 
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
-  styleUrls: ['./car.component.scss']
+  styleUrls: ['./car.component.scss'],
+  providers: [
+    ConsoleService,
+  ]
 })
 export class CarComponent implements OnInit {
   @Input() car: ICar = { name: '', isSold: false};
-  constructor() { }
+  constructor(private consoleService: ConsoleService) { }
 
   ngOnInit(): void {
   }
@@ -23,10 +27,12 @@ export class CarComponent implements OnInit {
 
   onBuy() {
     this.car.isSold = true;
+    this.consoleService.log(`${this.car.name} status buy`)
   }
   
   onRemove() {
     this.car.isSold = false;
+    this.consoleService.log(`${this.car.name} status return}`)
   }
 
 }
