@@ -21,4 +21,12 @@ export class CarComponent implements OnInit {
     }
   }
 
+  onBuy() {
+    this.car.isSold = true;
+  }
+  
+  onRemove() {
+    this.car.isSold = false;
+  }
+
 }

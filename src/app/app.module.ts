@@ -7,6 +7,7 @@ import { CarComponent } from './components/car/car.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,6 +22,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

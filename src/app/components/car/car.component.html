@@ -3,8 +3,15 @@
     {{ car.name }}
   </div>
   <div>
-    <button style="margin-right: 12px;" mat-raised-button color="primary" [disabled]="car.isSold">Купить</button>
-    <button mat-raised-button >Вернуть</button>
+    <button
+    style="margin-right: 12px;"
+    mat-raised-button color="primary"
+    [disabled]="car.isSold"
+    (click)="onBuy()"
+    >
+    Купить
+    </button>
+    <button mat-raised-button [disabled]="car.isSold === false" (click)="onRemove()">Вернуть</button>
 
   </div>
 </div>

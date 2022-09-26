@@ -1,4 +1,4 @@
 <div class="container max-w-none h-screen p-5 flex flex-col items-center">
-  <app-car-add class="w-1/2"></app-car-add>
+  <app-car-add (onCarAdd)="addCarToList($event)" class="w-1/2"></app-car-add>
   <app-car class="w-4/5" *ngFor="let car of cars;" [car]="car"> </app-car>
 </div>

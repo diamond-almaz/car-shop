@@ -21,4 +21,11 @@ export class AppComponent {
       isSold: true,
     },
   ]
+
+  addCarToList(carName: string) {
+    this.cars.push({
+      name: carName,
+      isSold: false,
+    })
+  }
 }
